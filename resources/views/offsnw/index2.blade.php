@@ -5,30 +5,15 @@
     <div class="right_col" role="main">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                    <div class="x_title">
-                        <h2>จัดการบทบาท <small>Roles</small></h2>
-                        <ul class="nav navbar-right panel_toolbox">
-                          <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                          </li>
-                          <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                            <ul class="dropdown-menu" role="menu">
-                              <li><a href="#">Settings 1</a>
-                              </li>
-                              <li><a href="#">Settings 2</a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li><a class="close-link"><i class="fa fa-close"></i></a>
-                          </li>
-                        </ul>
-                        <div class="clearfix">   <div class="pull-right">
-                 	        	@permission('role-create')
-                 	       <a class="btn btn-primary" href=""> เพิ่มข้อมูลสำนักเรียน</a>
-                 	            @endpermission
-                 	        </div></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                    <div class="panel-heading">
+                        <h1 class="text-center">ข้อมูลสนามสอบ <small></small></h1>
                     </div>
+                </div> </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
                     <div class="x_content">
 
                       @if ($message = Session::get('msg'))
@@ -61,7 +46,7 @@
 
 	</table>
   </h5>
-                    </div></div></div></div></div>
+                    </div></div></div></div></div></div></div>
 
     <!-- modals -->
     <div class="modal fade" id="linkEditorModal" aria-hidden="true">
@@ -211,7 +196,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" id="btn-save" value="add">อัพเดทข้อมูล
                     </button>
-
+                    <button type="button" class="btn btn-default" data-dismiss="modal">ปิดหน้าต่างนี้</button>
 
                 </div>
             </div>
@@ -249,7 +234,7 @@
     <script src="{{ URL::to('js/dataTables.keyTable.min.js') }}"></script>
     <script src="{{ URL::to('js/dataTables.responsive.min.js') }}"></script>
     <script src="{{ URL::to('js/responsive.bootstrap.js') }}"></script>
-    <script src="{{ URL::to('js/datatables.scroller.min.js') }}"></script>
+    <!--  <script src="cdn.datatables.net/scroller/1.4.2/js/dataTables.scroller.min.js"></script> -->
     <script src="{{ URL::to('js/jszip.min.js') }}"></script>
     <script src="{{ URL::to('js/pdfmake.min.js') }}"></script>
     <script src="{{ URL::to('js/vfs_fonts.js') }}"></script>
@@ -278,7 +263,9 @@ $(document).ready(function () {
 
                 serverSide: true,
                 processing: true,
-                ajax: '{{route('offsnw.data')}}',
+               ajax: '{{route('offsnw.dataonly')}}',
+              //  ajax: 'http://43.229.79.1/~jirakit/project1/public/offsnw/dataonly',
+
                 columns: [
                     {data: 'id'},
                     {data: 'nikay'},

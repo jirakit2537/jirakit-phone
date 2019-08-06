@@ -10,7 +10,7 @@
 			<div class="col-md-12 col-sm-12 col-xs-12">
 				<div class="x_panel">
 					<div class="x_title">
-						<h2>จัดการข้อมูลสมาชิก <small>Users</small></h2>
+						<h2>รายงานข้อมูลโทรศัพท์  <small>Notephone</small></h2>
 						<ul class="nav navbar-right panel_toolbox">
 							<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
 							</li>
@@ -50,29 +50,30 @@
 							<thead>
 								<tr>
 									<th>No</th>
-									<th>Name</th>
-									<th>Email</th>
-									<th>Roles</th>
+									<th>ชื่อผมโทร</th>
+									<th>เบอร์ติดต่อกลับ</th>
+									<th>สถานที่</th>
+									<th>เรื่อง</th>
+									<th>ผู้รับเรื่อง</th>
+									<th>สร้างเมือ</th>
 									<th width="280px">Action</th>
 								</tr>
 							</thead>
 							<tbody>
-
-								@foreach ($data as $key => $user)
+<?php $i = 0; ?>
+								@foreach ($data as $key => $note)
 <tr>
 										<td>{{ ++$i }}</td>
-										<td>{{ $user->name }}</td>
-										<td>{{ $user->email }}</td>
+										<td>{{ $note->namenote or 'ไม่พบข้อมูล'}}</td>
+										<td>{{ $note->phoneback or 'ไม่พบข้อมูล' }}</td>
+	<td>{{ $note->fromnote or 'ไม่พบข้อมูล' }}</td>
+	<td>{{ $note->story or 'ไม่พบข้อมูล' }}</td>
+	<td>{{ $note->User->name or 'ไม่พบข้อมูล' }}</td>
+	<td>{{ $note->created_at or 'ไม่พบข้อมูล' }}</td>
+
 										<td>
-											@if(!empty($user->roles))
-												@foreach($user->roles as $v)
-													<label class="label label-success">{{ $v->display_name }}</label>
-												@endforeach
-											@endif
-										</td>
-										<td>
-											<a href="{{ route('users.show',$user->id) }}"><i class="fa fa-chevron-up"></i></a>
-											<a href="{{ route('users.edit',$user->id) }}"><i class="fa fa-wrench"></i></a>
+											<a href="{{ route('notephone.show',$note->id) }}"><i class="fa fa-chevron-up"></i></a>
+											<a href="{{ route('notephone.edit',$note->id) }}"><i class="fa fa-wrench"></i></a>
 
 											<a id="deleteBtn" href="" ><i class="fa fa-close"></i></a>
 

@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Laravel',
+    'name' => 'Gongtham-DB',
 
     /*
     |--------------------------------------------------------------------------
@@ -64,7 +64,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/bangkok',
 
     /*
     |--------------------------------------------------------------------------
@@ -183,6 +183,12 @@ return [
     // ...
     Intervention\Image\ImageServiceProvider::class,
     Klaravel\Ntrust\NtrustServiceProvider::class,
+    Baum\Providers\BaumServiceProvider::class,
+    Nestable\NestableServiceProvider::class,
+    Barryvdh\DomPDF\ServiceProvider::class,
+        // Yajra\Datatables\DatatablesServiceProvider::class,
+
+
 
     ],
 
@@ -238,7 +244,11 @@ return [
     // ...
       'Image' => Intervention\Image\Facades\Image::class,
       'Ntrust' => Klaravel\Ntrust\NtrustFacade::class,
+      'Nestable' => Nestable\Facades\NestableService::class,
+      'PDF' => Barryvdh\DomPDF\Facade::class,
+        // 'DataTables' => Yajra\DataTables\Facades\DataTables::class,
 
+        'Helper' => App\Helpers\Helper::class,
     ],
 
 ];

@@ -19,7 +19,7 @@ class RoleController extends Controller
     public function index(Request $request)
     {
         $title = 'จัดการข้อมูลผู้ใช้';
-        $roles = Role::orderBy('id','DESC')->paginate(5);
+        $roles = Role::orderBy('id','DESC')->get();
         return view('roles.index',compact('roles','title'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }

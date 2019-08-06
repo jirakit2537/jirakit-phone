@@ -7,9 +7,9 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>จัดการข้อมูลสมาชิก <small>Users</small></h2>
+                        <h2>บันทึกข้อมูลโทรศัพท์ สำนักงานแม่กองธรรมสนามหลวง <small>Note</small></h2>
 												<div class="clearfix">      <div class="pull-right">
-																 <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
+																 <a class="btn btn-primary" href="{{ route('notephone.index') }}"> Back</a>
 														 </div></div>
                     </div>
                     <div class="x_content">
@@ -24,56 +24,38 @@
 			</ul>
 		</div>
 	@endif
-
-	{!! Form::open(array('route' => 'users.store','method'=>'POST')) !!}
+        <div class="panel panel-primary">
+            <div class="panel-heading">บันทึกข้อมูลโทรศัพท์ สำนักงานแม่กองธรรมสนามหลวง</div>
+            <div class="panel-body">
+	{!! Form::open(array('route' => 'notephone.store','method'=>'POST')) !!}
 	<div class="row">
 
-		<div class="col-xs-12 col-sm-12 col-md-12">
+		<div class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
-                <strong>Name:</strong>
-                {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
+                <strong>ชื่อผู้โทร:</strong>
+                {!! Form::text('namenote', null, array('placeholder' => 'ชื่อผู้โทร','class' => 'form-control')) !!}
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-6">
+            <div class="form-group">
+                <strong>หมายเลขติดต่อกลับ:</strong>
+                {!! Form::text('phoneback', null, array('placeholder' => 'หมายเลขติดต่อกลับ','class' => 'form-control')) !!}
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Email:</strong>
-                {!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control')) !!}
+                <strong>ติดต่อจาก(โรงเรียน/วัด/สนาม) :</strong>
+                {!! Form::text('form',null,  array('placeholder' => 'ติดต่อจาก(โรงเรียน/วัด/สนาม)','class' => 'form-control')) !!}
             </div>
         </div>
 
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Password:</strong>
-                {!! Form::password('password', array('placeholder' => 'Password','class' => 'form-control')) !!}
-            </div>
-        </div>
 
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Confirm Password:</strong>
-                {!! Form::password('confirm-password', array('placeholder' => 'Confirm Password','class' => 'form-control')) !!}
-            </div>
-        </div>
-				<div class="col-xs-12 col-sm-12 col-md-12">
-								<div class="form-group">
-										<strong>เบอร์โทรศัพท์:</strong>
-										{!! Form::text('telephone', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
-								</div>
-						</div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Role: เจ้าคณะจังหวัด สามารถสร้างลูกข่ายได้ </strong>
-                <!-- {!! Form::select('roles', $roles, array('class' => 'form-control')) !!} -->
-                {!! Form::select('roles',$roles, old('roles'), ['class'=>'form-control', 'placeholder'=>'เลือกประเภท สมาชิก']) !!}
-                {!! Form::hidden('parent_id',Auth::user()->id) !!}
-            </div>
-        </div>
 
-				<div class="panel panel-default">
-			       <div class="panel-heading">Select State and get bellow Related City</div>
-			       <div class="panel-body">
 
+
+        <div class="col-xs-6 col-sm-6 col-md-6">
 					   <div class="form-group">
 						   <label for="title">เลือกตำบล:</label>
 
@@ -81,6 +63,8 @@
 						   {!! Form::text('id_districts', null, array('placeholder' => 'ใส่ชื่อตำบล','class' => 'form-control' , 'id' => 'district')) !!}
 						   </select>
 					   </div>
+        </div>
+            <div class="col-xs-6 col-sm-6 col-md-6">
 			             <div class="form-group">
 
 			                 <label for="title">เลือกอำเภอ:</label>
@@ -88,26 +72,58 @@
 							 {!! Form::text('id_state', null, array('placeholder' => 'ใส่ชื่ออำเภอ','class' => 'form-control' , 'id' => 'amphoe')) !!}
 			                 </select>
 			             </div>
+            </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
 					   <div class="form-group">
+
 						   <label for="title">เลือกจังหวัด:</label>
 
 
 						   {!! Form::text('id_country', null, array('placeholder' => 'ใส่ชื่อจังหวัด','class' => 'form-control' , 'id' => 'province')) !!}
 					   </div>
-					   <div class="form-group">
-						   <label for="title">รหัสไปรษณีย์:</label>
+                </div>
+                    {{--<div class="col-xs-6 col-sm-6 col-md-6">--}}
+            {{--<div class="form-group">--}}
+                {{--<label for="title">รหัสไปรษณีย์:</label>--}}
 
 
-						   {!! Form::text('id_zipcode', null, array('placeholder' => 'ใส่รหัสไปรษณีย์','class' => 'form-control' , 'id' => 'zipcode')) !!}
-					   </div>
+                {{--{!! Form::text('id_zipcode', null, array('placeholder' => 'ใส่รหัสไปรษณีย์','class' => 'form-control' , 'id' => 'zipcode')) !!}--}}
+            {{--</div>--}}
+        {{--</div>--}}
+        <div class="col-xs-8 col-sm-8 col-md-8">
+            <div class="form-group">
+                <label for="title">ชื่อเรื่อง:</label>
 
 
+                {!! Form::text('story', null, array('placeholder' => 'ชื่อเรื่อง','class' => 'form-control' , 'id' => 'zipcode')) !!}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <label for="title">รายละเอียด:</label>
+
+
+                {!! Form::textarea('note', null, array('placeholder' => 'รายละเอียด','class' => 'form-control' , 'id' => 'zipcode')) !!}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <label for="title">หมายเหตุ:</label>
+
+
+                {!! Form::textarea('notepad', null, array('placeholder' => 'หมายเหตุ','class' => 'form-control' , 'id' => 'zipcode', 'rows' => '3')) !!}
+            </div>
+        </div>
+
+
+
+        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+            <button type="submit" class="btn btn-primary">บันทึกข้อมูล</button>
+        </div>
 			       </div>
 			     </div>
 
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-				<button type="submit" class="btn btn-primary">Submit</button>
-        </div>
+
 
 	</div>
 </div>
@@ -125,7 +141,7 @@
             $district: $('#district'), // input ของตำบล
             $amphoe: $('#amphoe'), // input ของอำเภอ
             $province: $('#province'), // input ของจังหวัด
-           $zipcode: $('#zipcode'), // input ของรหัสไปรษณีย์
+         //  $zipcode: $('#zipcode'), // input ของรหัสไปรษณีย์
         });
   $("select[name='id_country']").change(function(){
       var id_country = $(this).val();
