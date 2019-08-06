@@ -1,0 +1,95 @@
+<?php return array (
+  'sans-serif' => array(
+    'normal' => $rootDir . '\lib\fonts\Helvetica',
+    'bold' => $rootDir . '\lib\fonts\Helvetica-Bold',
+    'italic' => $rootDir . '\lib\fonts\Helvetica-Oblique',
+    'bold_italic' => $rootDir . '\lib\fonts\Helvetica-BoldOblique',
+  ),
+  'times' => array(
+    'normal' => $rootDir . '\lib\fonts\Times-Roman',
+    'bold' => $rootDir . '\lib\fonts\Times-Bold',
+    'italic' => $rootDir . '\lib\fonts\Times-Italic',
+    'bold_italic' => $rootDir . '\lib\fonts\Times-BoldItalic',
+  ),
+  'times-roman' => array(
+    'normal' => $rootDir . '\lib\fonts\Times-Roman',
+    'bold' => $rootDir . '\lib\fonts\Times-Bold',
+    'italic' => $rootDir . '\lib\fonts\Times-Italic',
+    'bold_italic' => $rootDir . '\lib\fonts\Times-BoldItalic',
+  ),
+  'courier' => array(
+    'normal' => $rootDir . '\lib\fonts\Courier',
+    'bold' => $rootDir . '\lib\fonts\Courier-Bold',
+    'italic' => $rootDir . '\lib\fonts\Courier-Oblique',
+    'bold_italic' => $rootDir . '\lib\fonts\Courier-BoldOblique',
+  ),
+  'helvetica' => array(
+    'normal' => $rootDir . '\lib\fonts\Helvetica',
+    'bold' => $rootDir . '\lib\fonts\Helvetica-Bold',
+    'italic' => $rootDir . '\lib\fonts\Helvetica-Oblique',
+    'bold_italic' => $rootDir . '\lib\fonts\Helvetica-BoldOblique',
+  ),
+  'zapfdingbats' => array(
+    'normal' => $rootDir . '\lib\fonts\ZapfDingbats',
+    'bold' => $rootDir . '\lib\fonts\ZapfDingbats',
+    'italic' => $rootDir . '\lib\fonts\ZapfDingbats',
+    'bold_italic' => $rootDir . '\lib\fonts\ZapfDingbats',
+  ),
+  'symbol' => array(
+    'normal' => $rootDir . '\lib\fonts\Symbol',
+    'bold' => $rootDir . '\lib\fonts\Symbol',
+    'italic' => $rootDir . '\lib\fonts\Symbol',
+    'bold_italic' => $rootDir . '\lib\fonts\Symbol',
+  ),
+  'serif' => array(
+    'normal' => $rootDir . '\lib\fonts\Times-Roman',
+    'bold' => $rootDir . '\lib\fonts\Times-Bold',
+    'italic' => $rootDir . '\lib\fonts\Times-Italic',
+    'bold_italic' => $rootDir . '\lib\fonts\Times-BoldItalic',
+  ),
+  'monospace' => array(
+    'normal' => $rootDir . '\lib\fonts\Courier',
+    'bold' => $rootDir . '\lib\fonts\Courier-Bold',
+    'italic' => $rootDir . '\lib\fonts\Courier-Oblique',
+    'bold_italic' => $rootDir . '\lib\fonts\Courier-BoldOblique',
+  ),
+  'fixed' => array(
+    'normal' => $rootDir . '\lib\fonts\Courier',
+    'bold' => $rootDir . '\lib\fonts\Courier-Bold',
+    'italic' => $rootDir . '\lib\fonts\Courier-Oblique',
+    'bold_italic' => $rootDir . '\lib\fonts\Courier-BoldOblique',
+  ),
+  'dejavu sans' => array(
+    'bold' => $rootDir . '\lib\fonts\DejaVuSans-Bold',
+    'bold_italic' => $rootDir . '\lib\fonts\DejaVuSans-BoldOblique',
+    'italic' => $rootDir . '\lib\fonts\DejaVuSans-Oblique',
+    'normal' => $rootDir . '\lib\fonts\DejaVuSans',
+  ),
+  'dejavu sans mono' => array(
+    'bold' => $rootDir . '\lib\fonts\DejaVuSansMono-Bold',
+    'bold_italic' => $rootDir . '\lib\fonts\DejaVuSansMono-BoldOblique',
+    'italic' => $rootDir . '\lib\fonts\DejaVuSansMono-Oblique',
+    'normal' => $rootDir . '\lib\fonts\DejaVuSansMono',
+  ),
+  'dejavu serif' => array(
+    'bold' => $rootDir . '\lib\fonts\DejaVuSerif-Bold',
+    'bold_italic' => $rootDir . '\lib\fonts\DejaVuSerif-BoldItalic',
+    'italic' => $rootDir . '\lib\fonts\DejaVuSerif-Italic',
+    'normal' => $rootDir . '\lib\fonts\DejaVuSerif',
+  ),
+  'thsarabunnew' => array(
+    'normal' => $fontDir . '\58914277651c9eedeb083b8c3808f922',
+    'bold' => $fontDir . '\41733f50dc75d28f9a918967c48c19e0',
+    'italic' => $fontDir . '\33b0ce92999fd1e09321d0be778a6512',
+    'bold_italic' => $fontDir . '\8e92564cef31a6684af1d18b178ad310',
+  ),
+  'sarabun' => array(
+    'normal' => $fontDir . '\04893d5626d3e61c316f494ee6a461f1',
+    'bold' => $fontDir . '\51b1b52a01a4527c1926bd18196876b0',
+    'italic' => $fontDir . '\c54589d5aeda4bd320c797212a6910a8',
+    'bold_italic' => $fontDir . '\f533ad655882b7685e99bc09c0ae9d3f',
+  ),
+  'thsarabun' => array(
+    'normal' => $fontDir . '\93bdd691671173fdd70feb315dabf5f8',
+  ),
+) ?>
